@@ -348,20 +348,10 @@ RETURN "No suitable slot available"
 
 
 
-<<<<<<< HEAD
+
 Time complexity: O(n) in the worst case, where n is the total number of slots, because every slot may need to be checked.
 
-
-
 Space complexity: O(1) additional space for the search, assuming the floors and slots are already stored.
-=======
-Time complexity:O(n) in the worst case, where n is the total number of slots, because every slot may need to be checked.
-
-
-
-Space complexity:O(1) additional space for the search, assuming the floors and slots are already stored.
->>>>>>> 288fe62cf90c70278f507e4d2186b660159a615f
-
 
 ## 8. Extensibility and Maintainability
 
