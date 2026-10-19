@@ -500,6 +500,42 @@ For example, searching a facility with 1,000 slots may require examining more sl
 
 These are theoretical complexity estimates. Actual execution-time measurements can be collected after implementation and testing.
 
+\### Example pseudocode: Finding a suitable free slot
+
+
+
+```text
+
+FOR each floor in the parking lot
+
+&#x20;   FOR each slot on the floor
+
+&#x20;       IF slot is free AND compatible with the vehicle
+
+&#x20;           RETURN the slot
+
+&#x20;       END IF
+
+&#x20;   END FOR
+
+END FOR
+
+
+
+RETURN "No suitable slot available"
+
+```
+
+
+
+\*\*Time complexity:\*\* O(n) in the worst case, where n is the total number of slots, because every slot may need to be checked.
+
+
+
+\*\*Space complexity:\*\* O(1) additional space for the search, assuming the floors and slots are already stored.
+
+
+
 
 
 \## 8. Extensibility and Maintainability
