@@ -251,7 +251,7 @@ For example, searching a facility with 1,000 slots may require examining more sl
 These are theoretical complexity estimates. Actual execution-time measurements can be collected after implementation and testing.
 
 <<<<<<< HEAD
-\### Example pseudocode: Finding a suitable free slot
+### Example pseudocode: Finding a suitable free slot
 
 
 
