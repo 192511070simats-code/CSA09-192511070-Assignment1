@@ -8,6 +8,31 @@ The system must allocate suitable parking slots, issue parking tickets, record e
 
 The design should use object-oriented programming principles so that the system is modular, maintainable, and easy to extend with new vehicle categories and pricing rules.
 
+## 1A. System Inputs and Outputs
+
+### Inputs
+
+The Campus Smart-Parking System receives the following inputs:
+
+- **Vehicle registration number:** Identifies the vehicle entering the parking facility.
+- **Vehicle type:** Specifies whether the vehicle is a two-wheeler, car, or electric vehicle (EV).
+- **Entry time and exit time:** Used to determine the parking duration.
+- **Parking slot information:** Includes slot number, floor number, slot type, availability, and charging facility.
+- **Monthly pass details:** Includes pass identification, validity period, and whether the pass belongs to a student or staff member.
+- **Parking and charging rates:** Used to calculate the applicable fees.
+
+### Outputs
+
+The system produces the following outputs:
+
+- The allocated parking slot and floor number.
+- A unique parking ticket containing the ticket number, vehicle details, slot details, and entry time.
+- A message such as "No suitable parking slot available" when no compatible slot is free.
+- The parking duration and calculated parking fee.
+- Separate EV charging charges when applicable.
+- A message showing whether a monthly pass is valid.
+- A final bill and confirmation that the slot has been released when the vehicle exits.
+
 ## 2. Functional Requirements
 
 1. Manage multiple parking floors, each containing several numbered slots.
@@ -85,7 +110,7 @@ The `ParkingTicket` class represents one parking session.
 - Support the calculation of the parking duration.
 - Keep the details of each parking session separate.
 
-**Reason for using a class:** The same vehicle may park multiple times. Each session needs its own ticket and timestamps so that its duration and fee can be calculated correctly.
+**Reason for using a class:** The same vehicle may park multiple times. Each session needs its own ticket and timestamps so that its duration and fee can be calculated correctly.The system must ensure that every ticket number is unique and is never reused, even after a parking session ends.
 
 ### 3.6 ParkingFeeCalculator
 
@@ -112,6 +137,35 @@ The `MonthlyPass` class represents a student's or staff member's monthly parking
 
 **Reason for using a class:** Pass validity depends on more than a simple true-or-false value. Separate pass information makes validity checks and future changes easier to manage.
 
+### Nouns and Verbs Analysis
+
+**Nouns that become candidate classes:**
+
+| Noun | Candidate class | Justification |
+|---|---|---|
+| Vehicle | `Vehicle` | Represents a vehicle and stores its registration number and type. |
+| Parking slot | `ParkingSlot` | Represents one slot and tracks its availability and compatibility. |
+| Parking floor | `ParkingFloor` | Organises and manages the slots on one floor. |
+| Parking lot | `ParkingLot` | Coordinates parking operations across all floors. |
+| Parking ticket | `ParkingTicket` | Records the details of one parking session. |
+| Fee calculator | `ParkingFeeCalculator` | Calculates parking and EV charging fees using the applicable rules. |
+| Monthly pass | `MonthlyPass` | Stores pass details and checks its validity. |
+
+**Verbs that become methods:**
+
+| Verb or action | Example method | Purpose |
+|---|---|---|
+| Register a vehicle | `registerVehicle()` | Records a vehicle entering the system. |
+| Find a slot | `findAvailableSlot()` | Searches for a compatible free slot. |
+| Allocate a slot | `allocateSlot()` | Assigns a free slot to a vehicle. |
+| Issue a ticket | `issueTicket()` | Creates a ticket with a unique number and entry time. |
+| Check a pass | `isValid()` | Checks whether a monthly pass is valid. |
+| Calculate a fee | `calculateFee()` | Calculates the parking charge. |
+| Record exit | `recordExit()` | Records the exit time and completes the parking session. |
+| Release a slot | `releaseSlot()` | Marks the slot as available again. |
+
+These method names are proposed design examples; their exact implementation will be decided when writing the Java program.
+
 ## 4. Business Rules
 
 1. A vehicle can be assigned only to a free and compatible slot.
@@ -126,6 +180,8 @@ The `MonthlyPass` class represents a student's or staff member's monthly parking
 10. EV charging charges are calculated separately from parking fees.
 11. When a vehicle exits, the system records the exit time, calculates the applicable charges, and releases the assigned slot.
 12. Each parking ticket must identify its own parking session.
+13. A parking slot cannot be assigned to two vehicles simultaneously.
+14. Every parking ticket must have a unique ticket number, and a ticket number must never be reused, even after the parking session ends.
 
 ## 5. Assumptions
 
@@ -163,38 +219,52 @@ Every parking session receives a unique ticket number. The chosen method for gen
 
 The actual rates for each vehicle category and EV charging are not specified here. The ₹30 hourly rate is an example used to explain proportional billing, not a confirmed rate for every vehicle category.
 
-## 6. Alternative Design: Parallel Arrays
+## 6. Alternative Design: Parallel Arrays vs Objects
 
-An alternative approach is to store vehicle information using separate arrays.
+### A. Parallel Arrays Approach
 
-For example:
+In this design, the information about each vehicle is stored in separate arrays. The values belonging to one vehicle must use the same index.
 
-```text
-registrationNumbers[] = vehicle registration numbers
-vehicleTypes[]        = vehicle categories
-needsCharging[]       = charging requirements
+Example:
+
+```java
+String[] regNo = new String[100];
+String[] type = new String[100];
+long[] entryTime = new long[100];
 ```
 
-### Advantages
+If `regNo[0]`, `type[0]`, and `entryTime[0]` contain information about the same vehicle, all three arrays must remain correctly aligned.
 
-- Simple to understand for small datasets.
-- Easy to store multiple values of the same data type.
-- Can be suitable for simple programs with fixed requirements.
+### B. Finding a Vehicle by Registration Number
 
-### Disadvantages
+In a parallel-array design, the system searches the `regNo[]` array sequentially. When the registration number is found at index `i`, the corresponding vehicle information is retrieved from `type[i]` and `entryTime[i]`.
 
-- All arrays must remain correctly aligned by index.
-- Incorrect updates can associate a vehicle with the wrong category or charging requirement.
-- Adding more attributes increases the number of arrays that must be managed.
-- Parking sessions, tickets, passes, and pricing rules become harder to organize.
-- The design does not clearly separate the responsibilities of the parking system.
+In an object-oriented design, the system searches a collection of `Vehicle` objects and compares the registration number stored in each object. Once the correct object is found, its other attributes can be accessed directly.
 
-### Object-oriented alternative
+For a sequential search, both approaches have **O(n) time complexity** in the worst case, where `n` is the number of vehicles. The search may need to inspect every vehicle.
 
-Using separate classes groups related attributes and behaviour. For example, a `Vehicle` object keeps its registration number and category together, while a `ParkingTicket` represents an individual parking session.
+### C. Adding a New Vehicle Attribute
 
-This structure is more suitable for a system that manages multiple floors, vehicle categories, tickets, passes, and pricing rules.
+Suppose the system must store the vehicle colour.
 
+- **Parallel arrays:** A new `colour[]` array must be created and maintained. Every insertion, update, and deletion must keep all arrays aligned.
+- **Object-oriented design:** A `colour` attribute can be added to the `Vehicle` class. Each vehicle object then stores its own colour alongside its existing attributes.
+
+Therefore, the object-oriented approach is easier to extend and reduces the risk of mixing up vehicle information.
+
+### D. Space Used per Vehicle
+
+For `n` vehicles, the three parallel arrays store `n` registration-number references, `n` type references, and `n` entry-time values. The array storage grows linearly with the number of vehicles: **O(n)**.
+
+A collection of `n` `Vehicle` objects also requires **O(n)** storage. Each vehicle object stores its attributes, and the collection stores references to the objects. The exact memory usage depends on the Java implementation, object overhead, data types, and stored values.
+
+When both designs store the same information, neither can be declared universally more memory-efficient without measuring the actual implementation.
+
+### E. Comparison and Conclusion
+
+Both designs have O(n) worst-case time complexity for a sequential search by registration number. Both require O(n) total storage for `n` vehicles.
+
+However, the object-oriented design groups related data into `Vehicle` objects and is easier to maintain when new attributes or behaviours are added. For the Campus Smart-Parking System, the object-oriented approach is preferred because the system must manage vehicle details, parking sessions, tickets, monthly passes, and pricing rules.
 ## 7. Alternative Slot Representation and Complexity Analysis
 
 Parking slots can also be represented using different data structures.
@@ -250,8 +320,7 @@ For example, searching a facility with 1,000 slots may require examining more sl
 
 These are theoretical complexity estimates. Actual execution-time measurements can be collected after implementation and testing.
 
-<<<<<<< HEAD
-\### Example pseudocode: Finding a suitable free slot
+### Example pseudocode: Finding a suitable free slot
 
 
 
@@ -259,15 +328,15 @@ These are theoretical complexity estimates. Actual execution-time measurements c
 
 FOR each floor in the parking lot
 
-&#x20;   FOR each slot on the floor
+   FOR each slot on the floor
 
-&#x20;       IF slot is free AND compatible with the vehicle
+       IF slot is free AND compatible with the vehicle
 
-&#x20;           RETURN the slot
+           RETURN the slot
 
-&#x20;       END IF
+       END IF
 
-&#x20;   END FOR
+   END FOR
 
 END FOR
 
@@ -279,22 +348,14 @@ RETURN "No suitable slot available"
 
 
 
-\*\*Time complexity:\*\* O(n) in the worst case, where n is the total number of slots, because every slot may need to be checked.
+Time complexity: O(n) in the worst case, where n is the total number of slots, because every slot may need to be checked.
 
 
 
-\*\*Space complexity:\*\* O(1) additional space for the search, assuming the floors and slots are already stored.
+Space complexity: O(1) additional space for the search, assuming the floors and slots are already stored.
 
 
-
-
-
-\## 8. Extensibility and Maintainability
-
-
-=======
 ## 8. Extensibility and Maintainability
->>>>>>> 9eceec89509bdceef8eade03a6eea6dd090647a7
 
 The system should be designed so that future changes do not require rewriting all existing classes.
 
