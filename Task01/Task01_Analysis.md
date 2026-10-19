@@ -258,15 +258,15 @@ These are theoretical complexity estimates. Actual execution-time measurements c
 
 FOR each floor in the parking lot
 
-&#x20;   FOR each slot on the floor
+   FOR each slot on the floor
 
-&#x20;       IF slot is free AND compatible with the vehicle
+       IF slot is free AND compatible with the vehicle
 
-&#x20;           RETURN the slot
+           RETURN the slot
 
-&#x20;       END IF
+       END IF
 
-&#x20;   END FOR
+   END FOR
 
 END FOR
 
