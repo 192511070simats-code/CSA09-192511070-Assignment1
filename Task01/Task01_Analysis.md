@@ -250,7 +250,6 @@ For example, searching a facility with 1,000 slots may require examining more sl
 
 These are theoretical complexity estimates. Actual execution-time measurements can be collected after implementation and testing.
 
-<<<<<<< HEAD
 ### Example pseudocode: Finding a suitable free slot
 
 
@@ -286,15 +285,7 @@ Time complexity:O(n) in the worst case, where n is the total number of slots, be
 Space complexity:O(1) additional space for the search, assuming the floors and slots are already stored.
 
 
-
-
-
 ## 8. Extensibility and Maintainability
-
-
-
-## 8. Extensibility and Maintainability
->>>>>>> 9eceec89509bdceef8eade03a6eea6dd090647a7
 
 The system should be designed so that future changes do not require rewriting all existing classes.
 
