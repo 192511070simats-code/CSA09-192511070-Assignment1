@@ -1,8 +1,8 @@
-\# Task 2 — Choose the Data Representation
+# Task 2 — Choose the Data Representation
 
 
 
-\## 1. Data Types and Justification
+## 1. Data Types and Justification
 
 
 
@@ -30,7 +30,7 @@ For a production billing system, `BigDecimal` would be preferable for accurate m
 
 
 
-\## 2. Array Representation
+## 2. Array Representation
 
 
 
@@ -48,7 +48,7 @@ Example:
 
 ```java
 
-String\[]\[] slots = {
+String[][] slots = {
 
 &#x20;   {"A1", "A2", "A3"},
 
@@ -66,7 +66,7 @@ The slot on a particular floor can be accessed using its floor index and slot in
 
 
 
-\## 3. Type Conversion, Casting, and Fee Calculation
+## 3. Type Conversion, Casting, and Fee Calculation
 
 
 
@@ -106,7 +106,7 @@ Therefore, floating-point division must be performed before the fractional part 
 
 
 
-\## 4. Input Method
+## 4. Input Method
 
 
 
@@ -150,7 +150,7 @@ Command-line arguments are an alternative, but numeric arguments must be convert
 
 
 
-\### A. One-Dimensional Array
+### A. One-Dimensional Array
 
 
 
@@ -166,7 +166,7 @@ This provides O(1) access when the floor and slot indices are known. However, wh
 
 
 
-\### B. ArrayList
+### B. ArrayList
 
 
 
@@ -174,7 +174,7 @@ An `ArrayList` can store slot objects or slot records in a resizable collection.
 
 
 
-\### C. Jagged Two-Dimensional Array
+### C. Jagged Two-Dimensional Array
 
 
 
@@ -182,7 +182,7 @@ A jagged array stores each floor in a separate row, allowing different numbers o
 
 
 
-\### D. Space Complexity
+### D. Space Complexity
 
 
 
