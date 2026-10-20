@@ -259,6 +259,7 @@ For `n` vehicles, the three parallel arrays store `n` registration-number refere
 A collection of `n` `Vehicle` objects also requires **O(n)** storage. Each vehicle object stores its attributes, and the collection stores references to the objects. The exact memory usage depends on the Java implementation, object overhead, data types, and stored values.
 
 When both designs store the same information, neither can be declared universally more memory-efficient without measuring the actual implementation.
+
 For each vehicle, the parallel-array design stores one entry in each corresponding array, while the object-oriented design stores one `Vehicle` object containing its attributes. Both designs use O(1) space per vehicle when the number of attributes is fixed, and O(n) total space for n vehicles. The actual memory used per vehicle may differ because Java objects have additional memory overhead.
 
 ### E. Comparison and Conclusion
