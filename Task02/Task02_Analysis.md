@@ -11,23 +11,14 @@ The following Java data types are selected for the Campus Smart-Parking System:
 
 
 | Field | Java Data Type | Justification |
-
 |---|---|---|
-
 | Slot number | `int` | Represents a whole-number identifier for each parking slot. |
-
 | Vehicle number | `String` | Vehicle registration numbers can contain letters and digits. |
-
 | Entry time | `long` | Stores entry timestamps in milliseconds. |
-
 | Duration | `double` | Represents parking duration in hours, including fractional hours. |
-
 | Fee | `double` | Supports fractional currency values during fee calculation. |
 
-
-
 For a production billing system, `BigDecimal` would be preferable for accurate monetary calculations.
-
 
 
 ## 2. Array Representation
