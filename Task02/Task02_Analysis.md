@@ -146,7 +146,7 @@ Command-line arguments are an alternative, but numeric arguments must be convert
 
 
 
-\## 5. Alternative Representations and Complexity Analysis
+## 5. Alternative Representations and Complexity Analysis
 
 
 
