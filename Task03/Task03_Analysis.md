@@ -1,8 +1,8 @@
-\# Task 3 — Design the Control Logic
+# Task 3 — Design the Control Logic
 
 
 
-\## 1. Allocation Pseudocode
+## 1. Allocation Pseudocode
 
 
 
@@ -10,23 +10,23 @@
 
 ALGORITHM AllocateSlot(vehicleNo)
 
-&#x20;   FOR each floor f
+   FOR each floor f
 
-&#x20;       FOR each slot s on floor f
+       FOR each slot s on floor f
 
-&#x20;           IF slots\[f]\[s] is NULL THEN
+           IF slots\[f]\[s] is NULL THEN
 
-&#x20;               slots\[f]\[s] ← vehicleNo
+               slots\[f]\[s] ← vehicleNo
 
-&#x20;               RETURN (f, s)
+               RETURN (f, s)
 
-&#x20;           END IF
+           END IF
 
-&#x20;       END FOR
+       END FOR
 
-&#x20;   END FOR
+   END FOR
 
-&#x20;   RETURN NULL
+   RETURN NULL
 
 END ALGORITHM
 
@@ -34,7 +34,7 @@ END ALGORITHM
 
 
 
-\## 2. Parking Fee Pseudocode
+## 2. Parking Fee Pseudocode
 
 
 
@@ -42,27 +42,27 @@ END ALGORITHM
 
 ALGORITHM CalculateFee(duration)
 
-&#x20;   IF duration <= 1 hour THEN
+   IF duration <= 1 hour THEN
 
-&#x20;       fee ← 30
+       fee ← 30
 
-&#x20;   ELSE
+   ELSE
 
-&#x20;       fee ← 30 + CEILING(duration - 1) × 20
+       fee ← 30 + CEILING(duration - 1) × 20
 
-&#x20;   END IF
-
-
-
-&#x20;   IF fee > 150 THEN
-
-&#x20;       fee ← 150
-
-&#x20;   END IF
+   END IF
 
 
 
-&#x20;   RETURN fee
+   IF fee > 150 THEN
+
+       fee ← 150
+
+   END IF
+
+
+
+   RETURN fee
 
 END ALGORITHM
 
@@ -70,23 +70,23 @@ END ALGORITHM
 
 
 
-\*\*Assumed fee rules:\*\* ₹30 for the first hour, ₹20 for each additional hour or part of an hour, and a daily maximum of ₹150.
+Assumed fee rules: ₹30 for the first hour, ₹20 for each additional hour or part of an hour, and a daily maximum of ₹150.
 
 
 
-\## 3. Use of break, continue, and return
+## 3. Use of break, continue, and return
 
 
 
-\- `break` stops the nearest loop when no further searching is needed.
+- `break` stops the nearest loop when no further searching is needed.
 
-\- `continue` skips the current iteration and moves to the next slot.
+- `continue` skips the current iteration and moves to the next slot.
 
-\- `return` immediately ends the method and returns the result. Allocation returns the first free slot's coordinates or `null` if all slots are occupied.
+- `return` immediately ends the method and returns the result. Allocation returns the first free slot's coordinates or `null` if all slots are occupied.
 
 
 
-\## 4. Alternative Concept and Complexity Analysis
+## 4. Alternative Concept and Complexity Analysis
 
 
 
