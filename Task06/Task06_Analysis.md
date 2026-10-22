@@ -1,8 +1,8 @@
-\# Task 6 — Design the Inheritance Hierarchy
+# Task 6 — Design the Inheritance Hierarchy
 
 
 
-\## 1. Superclass and Subclasses
+## 1. Superclass and Subclasses
 
 
 
@@ -12,17 +12,17 @@ The `Vehicle` class is the superclass containing common fields and methods such 
 
 The subclasses are:
 
-\- `Car` — inherits common vehicle details and adds car-specific information.
+- `Car` — inherits common vehicle details and adds car-specific information.
 
-\- `ElectricCar` — inherits from `Car` and adds battery capacity.
-
-
-
-This uses \*\*hierarchical inheritance\*\* when multiple classes extend `Vehicle`, and \*\*multilevel inheritance\*\* for `Vehicle → Car → ElectricCar`.
+- `ElectricCar` — inherits from `Car` and adds battery capacity.
 
 
 
-\## 2. Inherited and Additional Members
+This uses hierarchical inheritance when multiple classes extend `Vehicle`, and multilevel inheritance for `Vehicle → Car → ElectricCar`.
+
+
+
+## 2. Inherited and Additional Members
 
 
 
@@ -30,7 +30,7 @@ This uses \*\*hierarchical inheritance\*\* when multiple classes extend `Vehicle
 
 
 
-\## 3. Use of super
+## 3. Use of super
 
 
 
@@ -38,7 +38,7 @@ The `super` keyword calls a superclass constructor, accesses superclass methods,
 
 
 
-\## 4. Constructor Execution Trace
+## 4. Constructor Execution Trace
 
 
 
@@ -46,11 +46,11 @@ When an `ElectricCar` object is created, constructors execute in this order:
 
 
 
-1\. `Vehicle` constructor
+1. `Vehicle` constructor
 
-2\. `Car` constructor
+2. `Car` constructor
 
-3\. `ElectricCar` constructor
+3. `ElectricCar` constructor
 
 
 
@@ -58,31 +58,31 @@ The superclass constructor runs before the subclass constructor.
 
 
 
-\## 5. UML Class Diagram
+## 5. UML Class Diagram
 
 
 
 ```text
 
-&#x20;       Vehicle
+       Vehicle
 
-&#x20;          |
+          |
 
-&#x20;          v
+          v
 
-&#x20;         Car
+         Car
 
-&#x20;          |
+          |
 
-&#x20;          v
+          v
 
-&#x20;     ElectricCar
+     ElectricCar
 
 ```
 
 
 
-\## 6. Alternative Concept: Composition
+## 6. Alternative Concept: Composition
 
 
 
