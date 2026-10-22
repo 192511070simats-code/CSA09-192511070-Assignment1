@@ -1,8 +1,8 @@
-\# Task 9 — Introduce Abstraction
+# Task 9 — Introduce Abstraction
 
 
 
-\## 1. Abstract Class
+## 1. Abstract Class
 
 
 
@@ -14,7 +14,7 @@ An abstract class can contain fields, constructors, concrete methods, and abstra
 
 
 
-\## 2. Interface
+## 2. Interface
 
 
 
@@ -22,7 +22,7 @@ An abstract class can contain fields, constructors, concrete methods, and abstra
 
 
 
-\## 3. Why Use Both?
+## 3. Why Use Both?
 
 
 
@@ -34,7 +34,7 @@ A class can implement multiple interfaces, allowing it to obtain multiple behavi
 
 
 
-\## 4. Default and Static Interface Methods
+## 4. Default and Static Interface Methods
 
 
 
@@ -42,7 +42,7 @@ A default method is useful when all implementing classes can share a standard im
 
 
 
-\## 5. Alternative Design and Complexity Analysis
+## 5. Alternative Design and Complexity Analysis
 
 
 
@@ -58,7 +58,7 @@ Both designs can provide constant-time method calls when their implementations p
 
 
 
-\## Conclusion
+## Conclusion
 
 
 
