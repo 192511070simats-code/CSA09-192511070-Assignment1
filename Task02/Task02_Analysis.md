@@ -21,7 +21,10 @@ The following Java data types are selected for the Campus Smart-Parking System:
 For a production billing system, `BigDecimal` would be preferable for accurate monetary calculations.
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9db741052865184619a7a43061ec3e56aaccd844
 ## 2. Array Representation
 
 
@@ -40,7 +43,7 @@ Example:
 
 ```java
 
-String\[]\[] slots = {
+String[][] slots = {
 
 &#x20;   {"A1", "A2", "A3"},
 
