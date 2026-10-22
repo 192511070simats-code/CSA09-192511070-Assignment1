@@ -1,8 +1,8 @@
-\# Task 5 — Apply Static Members and the Object Life Cycle
+# Task 5 — Apply Static Members and the Object Life Cycle
 
 
 
-\## 1. Static Members
+## 1. Static Members
 
 
 
@@ -14,7 +14,7 @@ A static method can generate or return ticket numbers using class-level data. A 
 
 
 
-\## 2. Object Life Cycle
+## 2. Object Life Cycle
 
 
 
@@ -22,7 +22,7 @@ When a vehicle leaves, its parking ticket may no longer be needed. If no reachab
 
 
 
-\## 3. Passing and Returning Objects
+## 3. Passing and Returning Objects
 
 
 
@@ -30,7 +30,7 @@ Java passes object references by value. A method can access or modify an object 
 
 
 
-\## 4. Alternative Concept and Complexity Analysis
+## 4. Alternative Concept and Complexity Analysis
 
 
 
