@@ -1,8 +1,8 @@
-\# Task 8 — Apply Polymorphism
+# Task 8 — Apply Polymorphism
 
 
 
-\## 1. Compile-Time Polymorphism
+## 1. Compile-Time Polymorphism
 
 
 
@@ -10,11 +10,11 @@ Method overloading allows methods to have the same name but different parameter 
 
 
 
-\## 2. Runtime Polymorphism
+## 2. Runtime Polymorphism
 
 
 
-A `Vehicle\[]` array can store references to `TwoWheeler`, `Car`, and `ElectricCar` objects through upcasting.
+A `Vehicle[]` array can store references to `TwoWheeler`, `Car`, and `ElectricCar` objects through upcasting.
 
 
 
@@ -26,7 +26,7 @@ For example, when `v` refers to a `Car`, `ratePerHour()` returns ₹30. Since 13
 
 
 
-\## 3. Expected Output
+## 3. Expected Output
 
 
 
@@ -48,7 +48,7 @@ The electric car pays ₹90 for parking and ₹120 for charging 10 kWh, giving �
 
 
 
-\## 4. Equality Behaviour
+## 4. Equality Behaviour
 
 
 
@@ -60,7 +60,7 @@ This behaviour is correct if registration number alone defines vehicle identity 
 
 
 
-\## 5. Alternative and Complexity Analysis
+## 5. Alternative and Complexity Analysis
 
 
 
