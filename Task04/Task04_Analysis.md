@@ -1,22 +1,22 @@
-\# Task 4 — Design Classes, Objects and Constructors
+# Task 4 — Design Classes, Objects and Constructors
 
 
 
-\## 1. Class Fields and Methods
+## 1. Class Fields and Methods
 
 
 
-\- \*\*Vehicle:\*\* Stores vehicle number and type. Methods can display vehicle details.
+- Vehicle: Stores vehicle number and type. Methods can display vehicle details.
 
-\- \*\*ParkingSlot:\*\* Stores slot number and the parked vehicle. Methods can park or remove a vehicle.
+- ParkingSlot: Stores slot number and the parked vehicle. Methods can park or remove a vehicle.
 
-\- \*\*ParkingFloor:\*\* Stores and manages the slots on one floor.
+- ParkingFloor: Stores and manages the slots on one floor.
 
-\- \*\*ParkingLot:\*\* Manages floors, vehicle allocation and parking availability.
+- ParkingLot: Manages floors, vehicle allocation and parking availability.
 
-\- \*\*ParkingTicket:\*\* Stores ticket number, vehicle number and entry time.
+- ParkingTicket: Stores ticket number, vehicle number and entry time.
 
-\- \*\*MonthlyPass:\*\* Stores pass details and validity dates.
+- MonthlyPass: Stores pass details and validity dates.
 
 
 
@@ -24,7 +24,7 @@ Each class has a specific responsibility, making the system easier to maintain a
 
 
 
-\## 2. Constructors, this and Constructor Chaining
+## 2. Constructors, this and Constructor Chaining
 
 
 
@@ -36,7 +36,7 @@ The `this` keyword refers to the current object. It distinguishes object fields 
 
 
 
-\## 3. Copy Constructor
+## 3. Copy Constructor
 
 
 
@@ -44,7 +44,7 @@ A copy constructor creates a new object using the values of an existing object. 
 
 
 
-\## 4. Object Memory
+## 4. Object Memory
 
 
 
@@ -52,7 +52,7 @@ A reference variable refers to an object. Objects created using `new` are genera
 
 
 
-\## 5. Alternative Approaches and Complexity
+## 5. Alternative Approaches and Complexity
 
 
 
