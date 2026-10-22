@@ -1,8 +1,8 @@
-\# Task 11 — Implement, Test and Defend the Design
+# Task 11 — Implement, Test and Defend the Design
 
 
 
-\## 1. Implementation
+## 1. Implementation
 
 
 
@@ -10,7 +10,7 @@ The parking system stores parking slots and active tickets in arrays. It support
 
 
 
-\## 2. Test Table
+## 2. Test Table
 
 
 
@@ -36,7 +36,7 @@ The parking system stores parking slots and active tickets in arrays. It support
 
 
 
-\## 3. Daily Collection Calculation
+## 3. Daily Collection Calculation
 
 
 
@@ -44,13 +44,13 @@ The test scenario contains two vehicles:
 
 
 
-\- Bike: 60 minutes × ₹10 per hour = ₹10
+- Bike: 60 minutes × ₹10 per hour = ₹10
 
-\- Car: 120 minutes × ₹30 per hour = ₹60
+- Car: 120 minutes × ₹30 per hour = ₹60
 
 
 
-\*\*Total collection = ₹10 + ₹60 = ₹70.\*\*
+Total collection = ₹10 + ₹60 = ₹70.
 
 
 
@@ -58,11 +58,11 @@ The program should display `Total collection: Rs 70.0`, matching the manual calc
 
 
 
-\## 4. Design Evaluation
+## 4. Design Evaluation
 
 
 
-\- \*\*Encapsulation:\*\* Fields are private and accessed through methods.
+- Encapsulation: Fields are private and accessed through methods.
 
-\- \*\*Inheritance and abstraction:\*\* The earlier tasks demonstrate
+- Inheritance and abstraction: The earlier tasks demonstrate
 
