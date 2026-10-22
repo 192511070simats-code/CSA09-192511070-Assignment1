@@ -1,8 +1,8 @@
-\# Task 10 — Enforce Encapsulation through Packages and Access Modifiers
+# Task 10 — Enforce Encapsulation through Packages and Access Modifiers
 
 
 
-\## 1. Package Structure
+## 1. Package Structure
 
 
 
@@ -10,11 +10,11 @@ The system can be organised into these packages:
 
 
 
-\- `parking.model` — stores model classes such as `ParkingSlot`.
+- `parking.model` — stores model classes such as `ParkingSlot`.
 
-\- `parking.service` — contains parking-related operations.
+- `parking.service` — contains parking-related operations.
 
-\- `parking.app` — contains the main application.
+- `parking.app` — contains the main application.
 
 
 
@@ -22,17 +22,17 @@ Packages organise code and improve maintainability.
 
 
 
-\## 2. Access Modifiers
+## 2. Access Modifiers
 
 
 
-\- `private`: protects fields from direct external access.
+- `private`: protects fields from direct external access.
 
-\- Default (package-private): allows access within the same package.
+- Default (package-private): allows access within the same package.
 
-\- `protected`: allows access within the package and through inheritance.
+- `protected`: allows access within the package and through inheritance.
 
-\- `public`: allows access from other packages when the class is accessible.
+- `public`: allows access from other packages when the class is accessible.
 
 
 
@@ -40,7 +40,7 @@ Fields should generally be private, with public methods used to access or update
 
 
 
-\## 3. Getters, Setters and Validation
+## 3. Getters, Setters and Validation
 
 
 
@@ -48,7 +48,7 @@ Getters return field values. Setters validate incoming values before updating fi
 
 
 
-\## 4. Wrapper Classes and Autoboxing
+## 4. Wrapper Classes and Autoboxing
 
 
 
@@ -60,7 +60,7 @@ Using `==` to compare two `Integer` objects may compare references rather than n
 
 
 
-\## 5. Alternative Design and Complexity Analysis
+## 5. Alternative Design and Complexity Analysis
 
 
 
@@ -72,7 +72,7 @@ A simple validation check takes O(1) time per update. With validation inside a s
 
 
 
-\## Conclusion
+## Conclusion
 
 
 
