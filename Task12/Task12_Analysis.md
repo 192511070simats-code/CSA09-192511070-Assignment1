@@ -1,8 +1,8 @@
-\# Task 12 — Re-evaluate and Adapt the Design
+# Task 12 — Re-evaluate and Adapt the Design
 
 
 
-\## A. Impact Analysis
+## A. Impact Analysis
 
 
 
@@ -18,7 +18,7 @@ A normal two-dimensional array assumes every floor has the same number of slots.
 
 
 
-\## B. Evaluation of the Original Design
+## B. Evaluation of the Original Design
 
 
 
@@ -30,7 +30,7 @@ The original fixed-capacity array also needs adaptation for unequal floor sizes.
 
 
 
-\## C. Adaptation Decision
+## C. Adaptation Decision
 
 
 
@@ -40,15 +40,15 @@ I chose to modify the design instead of completely replacing it.
 
 The revised design uses:
 
-\- An abstract `Vehicle` class for common vehicle data and behaviour.
+- An abstract `Vehicle` class for common vehicle data and behaviour.
 
-\- Separate subclasses for existing vehicles, e-bikes, and delivery vans.
+- Separate subclasses for existing vehicles, e-bikes, and delivery vans.
 
-\- A `PricingRule` abstraction to separate pricing policy from parking operations.
+- A `PricingRule` abstraction to separate pricing policy from parking operations.
 
-\- A `Pass` interface for one-day visitor passes.
+- A `Pass` interface for one-day visitor passes.
 
-\- A jagged array to represent five floors with different slot capacities.
+- A jagged array to represent five floors with different slot capacities.
 
 
 
@@ -56,7 +56,7 @@ E-bikes use a flat parking fee. Delivery vans use double the car rate during the
 
 
 
-\## D. Evidence-Based Defence
+## D. Evidence-Based Defence
 
 
 
