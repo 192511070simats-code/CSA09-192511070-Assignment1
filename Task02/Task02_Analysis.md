@@ -20,14 +20,7 @@ The following Java data types are selected for the Campus Smart-Parking System:
 
 For a production billing system, `BigDecimal` would be preferable for accurate monetary calculations.
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 9db741052865184619a7a43061ec3e56aaccd844
 ## 2. Array Representation
-
-
 
 A jagged two-dimensional array (`String\[]\[]`) is selected to represent the parking floors and slots. Each row represents one floor, and each element represents a slot on that floor.
 
